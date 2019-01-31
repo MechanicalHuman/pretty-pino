@@ -1,0 +1,108 @@
+{
+  "name": "pretty-pino",
+  "version": "0.0.1",
+  "description": "Prettifies NDJSON (Newline Delimited JSON) logs.  Similar to pino-pretty but actually pretty.",
+  "keywords": [
+    "bunyan",
+    "logger",
+    "ndjson",
+    "pino",
+    "pretty-printer"
+  ],
+  "homepage": "https://github.com/MechanicalHuman/pretty-pino#readme",
+  "bugs": {
+    "url": "https://github.com/MechanicalHuman/pretty-pino/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:MechanicalHuman/pretty-pino.git"
+  },
+  "license": "MIT",
+  "author": "Jorge Proaño <jorge@hiddennodeproblem.com> (http://www.hidden-node-problem.com)",
+  "contributors": [
+    "An"
+  ],
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "bin": {
+    "pretty-pino": "pretty.js"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "precompile": "rm -rf dist/*",
+    "compile": "tsc",
+    "dev": "npm run compile -- --watch",
+    "lint": "tslint -p tsconfig.json",
+    "prepublishOnly": "npm run compile",
+    "test": "mocha",
+    "test:watch": "mocha --watch",
+    "todos": "package-scripts todos"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "package-scripts compile; lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{json,md,js}": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.{ts,tsx}": [
+      "prettier --write",
+      "tslint --fix",
+      "git add"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "@hnp/cz"
+    }
+  },
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "config": "^3.0.1",
+    "debug": "^4.1.1",
+    "ipaddr.js": "^1.8.1",
+    "lodash": "^4.17.11",
+    "moment-timezone": "^0.5.23",
+    "parse-headers": "^2.0.1",
+    "pretty-ms": "^4.0.0",
+    "split2": "^3.1.0",
+    "string-length": "^2.0.0",
+    "supports-color": "^6.1.0",
+    "term-size": "^1.2.0",
+    "update-notifier": "^2.5.0",
+    "yargs": "^12.0.5"
+  },
+  "devDependencies": {
+    "@hnp/cz": "^1.0.7",
+    "@hnp/package-scripts": "^1.0.10",
+    "@types/debug": "0.0.31",
+    "@types/lodash": "^4.14.120",
+    "@types/update-notifier": "^2.5.0",
+    "@types/yargs": "^12.0.8",
+    "chai": "^4.2.0",
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.1",
+    "mocha": "^5.2.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.16.3",
+    "tslint": "^5.12.1",
+    "tslint-config-hnp": "^1.2.1",
+    "typescript": "^3.2.4"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "preferGlobal": true,
+  "publishConfig": {
+    "access": "private"
+  }
+}

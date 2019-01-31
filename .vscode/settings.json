@@ -1,0 +1,7 @@
+{
+  "eslint.enable": false,
+  "editor.formatOnSave": true,
+  "prettier.eslintIntegration": false,
+  "prettier.tslintIntegration": true,
+  "cSpell.words": ["ndjson"]
+}
