@@ -1,6 +1,6 @@
 # pretty-pino
 
-![hero](hero.png)
+![hero](img/pretty-nostamps.png)
 
 > Prettifies NDJSON (Newline Delimited JSON) logs. Similar to pino-pretty but actually pretty.
 
